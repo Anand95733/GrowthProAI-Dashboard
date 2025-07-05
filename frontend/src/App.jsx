@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 import AnalyticsDashboard from './components/AnalyticsDashboard';
 import BusinessesListView from './components/BusinessesListView';
 import { useBusinessData } from './hooks/useBusinessData';
-import { BusinessDataProvider } from './context/BusinessDataContext';
+import { BusinessDataProvider } from './context/BusinessDataProvider';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function DashboardContent() {

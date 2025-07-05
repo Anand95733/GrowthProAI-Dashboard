@@ -1,10 +1,10 @@
 // frontend/src/hooks/useBusinessData.js
 
-import { useContext, useState, useEffect, useCallback } from 'react';
+import { useContext, useCallback } from 'react';
 import { BusinessDataContext } from '../context/BusinessDataContext';
 
 // Define your API base URL here, using the deployed backend URL
-const API_BASE_URL = 'https://growthproai-dashboard-sm5p.onrender.com'; // <<< UPDATED: Your live backend URL
+const API_BASE_URL = 'https://growthproai-dashboard-sm5p.onrender.com'; // Your live backend URL
 
 export const useBusinessData = () => {
   const context = useContext(BusinessDataContext);
@@ -58,8 +58,8 @@ export const useBusinessData = () => {
         rating: data.rating,
         reviews: data.reviews,
         aiGeneratedSEOHybridHeadline: data.headline,
-        reviewVolumeTrends: data.reviewVolumeTrends || [], // Ensure it's an array
-        sentimentDistribution: data.sentimentDistribution || {}, // Ensure it's an object
+        reviewVolumeTrends: data.reviewTrends || [], // Ensure it's an array
+        sentiment: data.sentiment || {}, // <<< FIX THIS LINE: Changed from sentimentDistribution to sentiment
       };
 
       setBusinesses(prev => [...prev, newBusiness]);
